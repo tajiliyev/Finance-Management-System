@@ -1,0 +1,104 @@
+/* Основной сброс */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #f3f4f6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #1f2937;
+}
+
+/* Контейнер формы */
+.login-container {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.login-container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Логотип */
+.logo {
+    width: 180px;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Заголовок */
+.login-container h2 {
+    color: #1e40af;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+/* Поля ввода */
+.login-container input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+.login-container input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.4);
+    outline: none;
+}
+
+/* Кнопка входа */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e40af;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.login-container button:hover {
+    background-color: #2563eb;
+}
+
+/* Сообщение об ошибке */
+.error-message {
+    margin-top: 15px;
+    color: #ef4444;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+}

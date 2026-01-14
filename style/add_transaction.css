@@ -1,0 +1,237 @@
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+    margin: 0;
+    padding: 30px;
+    color: #1f2937;
+}
+
+/* === Контейнер === */
+.container {
+    max-width: 620px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 28px 26px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.5s ease;
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* === Плавное появление === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Верхняя часть === */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.return-link {
+    color: #1E40AF;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 20px;
+    background: #eef2ff;
+    border-radius: 10px;
+    border: 1px solid #1E40AF;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.return-link:hover {
+    background: #1E40AF;
+    color: #fff;
+    transform: translateX(-3px);
+    box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+}
+
+/* === Формы === */
+form div {
+    margin-bottom: 16px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* === Поля ввода === */
+select, input, textarea {
+    width: 95%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    background: #f9fafb;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+select:focus, input:focus, textarea:focus {
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.25);
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* === Кнопка === */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #1d4ed8, #2563eb);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+}
+
+/* === Крупный чекбокс для кредита === */
+.credit-checkbox {
+    position: relative;
+    margin-top: 20px;
+    padding: 16px 18px;
+    background: #f9fafb;
+    border: 1.5px solid #d1d5db;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.credit-checkbox:hover {
+    background: #eef2ff;
+    border-color: #2563eb;
+    box-shadow: 0 3px 8px rgba(37, 99, 235, 0.15);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 16px;
+    user-select: none;
+}
+
+.custom-checkbox {
+    width: 26px;
+    height: 26px;
+    border: 2px solid #2563eb;
+    border-radius: 8px;
+    margin-right: 12px;
+    position: relative;
+    background: #fff;
+    transition: all 0.25s ease;
+}
+
+/* скрываем стандартный чекбокс */
+.credit-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+/* при активном состоянии */
+.credit-checkbox input[type="checkbox"]:checked + .checkbox-label .custom-checkbox {
+    background: #2563eb;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+}
+
+.credit-checkbox input[type="checkbox"]:checked + .checkbox-label .custom-checkbox::after {
+    content: "✔";
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    top: 2px;
+    left: 5px;
+    font-weight: bold;
+}
+
+/* === Подсказка === */
+.hint {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 8px;
+    margin-left: 38px;
+}
+
+/* === Блок должника === */
+.debtor-block {
+    display: none;
+    opacity: 0;
+    transform: translateY(-8px);
+    margin-top: 14px;
+    padding: 14px 16px;
+    border-left: 4px solid #2563eb;
+    background: #eff6ff;
+    border-radius: 10px;
+    transition: all 0.35s ease;
+}
+
+.debtor-block.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.debtor-block.highlight {
+    animation: glow 0.6s ease-out;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 12px #93c5fd; }
+    100% { box-shadow: none; }
+}
+
+/* === Мобильная адаптация === */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
